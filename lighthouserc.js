@@ -2,6 +2,12 @@ module.exports = {
     ci: {
       collect: {
         url: ['http://localhost:8080'] /* Add configuration here */
+        settings: {
+            emulatedFormFactor: "mobile",
+            chromeFlags: "--no-sandbox",
+        },
+        numberOfRuns: 2
+    },
       },
       upload: {
         target: 'temporary-public-storage', /* Add configuration here */
