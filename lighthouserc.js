@@ -2,8 +2,6 @@ module.exports = {
     ci: {
       collect: {
         url: ['http://localhost:8080'] /* Add configuration here */
-        "chromePath": false,
-        "numberOfRuns": 1,
       },
       upload: {
         target: 'temporary-public-storage', /* Add configuration here */
