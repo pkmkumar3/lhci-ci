@@ -42,13 +42,13 @@ stages:
         displayName: 'Collect'
         inputs:
           command: 'custom'
-          customCommand: 'run lighthouse:collect'
+          customCommand: 'run lhci:collect'
 
       - task: Npm@1
         displayName: 'Upload'
         inputs:
           command: 'custom'
-          customCommand: 'run lighthouse:upload'
+          customCommand: 'run lhci:upload'
 
 - stage: release
   displayName: 'Release'
