@@ -1,18 +1,23 @@
-module.exports = {
-    ci: {
-      collect: {
-        url: ['http://localhost:8080'] /* Add configuration here */
-        settings: {
-            emulatedFormFactor: "mobile",
-            chromeFlags: "--no-sandbox",
-        },
-        numberOfRuns: 2
+{
+  "ci": {
+    "collect": {
+      "chromePath": false,
+      "numberOfRuns": 1,
+      "puppeteerScript": "./lighthouse/pre-collect.js",
+      "url": ""
     },
-      },
-      upload: {
-        target: 'temporary-public-storage', /* Add configuration here */
-        "token": "e0e319af-7d58-4f8c-9f75-e85856354ca0",
-        "serverBaseUrl": "http://20.237.121.213/"
-      },
+    "assert": {
+      "assertions": {
+        "categories:performance": ["error", { "minScore": 0.90 }],
+        "categories:accessibility": ["error", { "minScore": 0.90 }],
+        "categories:best-practices": ["error", { "minScore": 0.90 }],
+        "categories:seo": ["error", { "minScore": 0.90 }]
+      }
     },
-  };
+    "upload": {
+      "target": "lhci",
+      "token": "8d6a1879-7e63-48ad-8b35-b4799761d31c",
+      "serverBaseUrl": "http://20.237.121.213/"
+    }
+  }
+}
