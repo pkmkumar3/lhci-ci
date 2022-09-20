@@ -1,0 +1,15 @@
+{
+  "name": "lhci",
+  "version": "0.0.0",
+  "scripts": {
+    "healthcheck": "lhci healthcheck --config=./lighthouse.yml",
+    "collect": "lhci collect --config=./lighthouse.yml",
+    "Upload": "lhci upload --config=./lighthouse.yml",
+	"assert": "lhci assert --config=./lighthouse.yml"
+
+  },
+  "dependencies": {
+    "@lhci/cli": "^0.9.0",
+    "puppeteer": "16.1.1"
+  }
+}
